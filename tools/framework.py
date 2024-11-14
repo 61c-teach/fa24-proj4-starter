@@ -29,7 +29,7 @@ def run_oracle(a_path: Path, b_path: Path, out_path: Path):
     if not oracle_path.exists():
         raise RuntimeError(
             "Oracle does not exist, please run on the hive machines")
-    subprocess.run([oracle_path, a_path, b_path, out_path])
+    subprocess.run([oracle_path, a_path, b_path, out_path], check=True)
 
 
 def randint(lower, upper, **kwargs):
